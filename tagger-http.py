@@ -26,6 +26,8 @@ class TaggerHttpHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             return
         
+        start = time.time()
+        
         # Lowercase sentence
         if tagger.parameters['lower']:
             line = line.lower()
@@ -61,6 +63,7 @@ class TaggerHttpHandler(BaseHTTPRequestHandler):
         
         self.send_response(200)
         self.send_header("Content-type", "application/json")
+        self.send_header("X-Time-Tagger", time.time() - start)
         self.end_headers()
         self.wfile.write(json.dumps(result))
 
