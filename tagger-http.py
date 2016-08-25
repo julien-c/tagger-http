@@ -11,7 +11,7 @@ from tagger.utils import create_input, iobes_iob, iob_ranges, zero_digits
 from tagger.model import Model
 
 
-PORT_NUMBER = os.getenv('PORT_NUMBER', 8000)
+PORT_NUMBER = os.getenv('PORT_NUMBER', 7890)
 
 
 class TaggerHttpHandler(BaseHTTPRequestHandler):
