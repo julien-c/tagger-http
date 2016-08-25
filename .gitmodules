@@ -1,0 +1,3 @@
+[submodule "tagger"]
+	path = tagger
+	url = https://github.com/julien-c/tagger.git
